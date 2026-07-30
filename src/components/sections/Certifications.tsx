@@ -1,26 +1,38 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AnimatedCard from '../common/AnimatedCard';
-import SectionTitle from '../common/SectionTitle';
-import certificationsData from '../../data/certificationsData';
-import { staggerContainer, staggerItem } from '../../utils/animations';
+import { useAppSelector } from '../../store/hooks';
+import { listReveal, listItem } from '../../utils/animations';
 
 const Certifications: React.FC = () => {
+  const certificationsData = useAppSelector((state) => state.portfolio.certifications);
+
   return (
-    <AnimatedCard delay={0.4}>
-      <SectionTitle icon="fas fa-certificate">Certifications & Learning</SectionTitle>
-      <motion.div variants={staggerContainer} initial="hidden" animate="visible">
+    <section id="certifications" className="section">
+      <div className="section-head">
+        <p className="section-kicker">Credentials</p>
+        <h2 className="section-display">Certifications & learning</h2>
+      </div>
+
+      <motion.div
+        className="cert-grid"
+        variants={listReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {certificationsData.map((cert) => (
-          <motion.div key={cert.id} variants={staggerItem} whileHover={{ x: 5 }}>
-            <motion.span className="cert-badge" whileHover={{ scale: 1.05 }}>
-              {cert.icon && <i className={cert.icon}></i>} {cert.name}
-            </motion.span>
-            {cert.title}
-            {cert.year && ` (${cert.year})`}
-          </motion.div>
+          <motion.article key={cert.id} className="cert-card" variants={listItem}>
+            <span className="cert-badge">
+              {cert.icon && <i className={cert.icon} />} {cert.name}
+            </span>
+            <h3 className="cert-heading">
+              {cert.title}
+              {cert.year ? ` (${cert.year})` : ''}
+            </h3>
+          </motion.article>
         ))}
       </motion.div>
-    </AnimatedCard>
+    </section>
   );
 };
 

@@ -1,31 +1,20 @@
-# Chandrasekar S - Portfolio (TypeScript)
+# Chandrasekar S - Portfolio
 
 Full-stack developer portfolio built with React, TypeScript, Redux, and Framer Motion.
 
-## Features
-
-- ✅ TypeScript for type safety
-- ✅ React 18 with functional components
-- ✅ Redux Toolkit for state management
-- ✅ Framer Motion animations
-- ✅ Dark/Light mode
-- ✅ Responsive design
-- ✅ SOLID principles
-
-## Installation
+## Quick Start
 
 ```bash
 npm install
-```
-
-## Development
-
-```bash
 npm start
 ```
 
-## Build
+## Features
 
-```bash
-npm run build
-```
+- ✅ TypeScript
+- ✅ React 18
+- ✅ Redux Toolkit
+- ✅ Framer Motion
+- ✅ Dark/Light mode
+- ✅ Responsive
+- ✅ SOLID principles

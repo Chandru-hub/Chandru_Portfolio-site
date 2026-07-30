@@ -1,23 +1,36 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AnimatedCard from '../common/AnimatedCard';
-import SectionTitle from '../common/SectionTitle';
-import educationData from '../../data/educationData';
-import { staggerContainer, staggerItem } from '../../utils/animations';
+import { useAppSelector } from '../../store/hooks';
+import { listReveal, listItem } from '../../utils/animations';
 
 const Education: React.FC = () => {
+  const educationData = useAppSelector((state) => state.portfolio.education);
+
   return (
-    <AnimatedCard delay={0.2}>
-      <SectionTitle icon="fas fa-graduation-cap">Education</SectionTitle>
-      <motion.div variants={staggerContainer} initial="hidden" animate="visible">
+    <section id="education" className="section">
+      <div className="section-head">
+        <p className="section-kicker">Academic journey</p>
+        <h2 className="section-display">Education</h2>
+      </div>
+
+      <motion.div
+        className="edu-list"
+        variants={listReveal}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
         {educationData.map((edu, idx) => (
-          <motion.div className="edu-item" key={idx} variants={staggerItem} whileHover={{ x: 5 }}>
-            <span><strong>{edu.degree}</strong> · {edu.institution}</span>
-            <span>{edu.period}</span>
+          <motion.div className="edu-row" key={idx} variants={listItem}>
+            <span className="edu-period">{edu.period}</span>
+            <div>
+              <h3 className="edu-heading">{edu.degree}</h3>
+              <p className="edu-meta">{edu.institution}</p>
+            </div>
           </motion.div>
         ))}
       </motion.div>
-    </AnimatedCard>
+    </section>
   );
 };
 
