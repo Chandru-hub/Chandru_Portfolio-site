@@ -10,6 +10,8 @@ export interface ProfileData {
   title: string;
   avatar: string;
   summary: string;
+  headline: string;
+  availability: string;
   contact: ContactInfo;
 }
 
@@ -37,6 +39,8 @@ export interface Project {
   id: number;
   title: string;
   description: string;
+  category?: string;
+  stack?: string[];
 }
 
 export interface Certification {
@@ -47,6 +51,13 @@ export interface Certification {
   icon: string;
 }
 
+export type ThemeMode = 'light' | 'dark' | 'neon' | 'forest' | 'ocean';
+
+export type TimeOfDay = 'morning' | 'afternoon' | 'evening' | 'night';
+
 export interface ThemeState {
-  mode: 'light' | 'dark';
+  mode: ThemeMode;
+  /** When true, theme follows local time of day */
+  autoTime: boolean;
+  timeOfDay: TimeOfDay;
 }

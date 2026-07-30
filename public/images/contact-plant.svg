@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 360" fill="none" aria-hidden="true">
+  <!-- Pot -->
+  <path d="M118 250h84l-10 70c-2 12-12 20-24 20h-16c-12 0-22-8-24-20l-10-70z" stroke="#9ca3af" stroke-width="2.5" stroke-linejoin="round"/>
+  <ellipse cx="160" cy="250" rx="52" ry="10" stroke="#9ca3af" stroke-width="2.5"/>
+  <!-- Stem -->
+  <path d="M160 248 C158 200 162 160 160 120" stroke="#9ca3af" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Leaves -->
+  <path d="M160 210 C120 195 95 160 108 130 C130 145 150 175 160 210Z" stroke="#9ca3af" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M160 200 C200 180 230 145 218 115 C195 135 172 165 160 200Z" stroke="#9ca3af" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M160 170 C125 155 105 120 118 90 C138 110 152 140 160 170Z" stroke="#9ca3af" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M160 155 C195 135 220 100 208 72 C188 95 170 125 160 155Z" stroke="#9ca3af" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M160 130 C140 110 132 78 148 55 C155 78 158 105 160 130Z" stroke="#9ca3af" stroke-width="2.2" stroke-linejoin="round"/>
+  <path d="M160 125 C178 105 188 75 172 52 C168 75 164 100 160 125Z" stroke="#9ca3af" stroke-width="2.2" stroke-linejoin="round"/>
+</svg>

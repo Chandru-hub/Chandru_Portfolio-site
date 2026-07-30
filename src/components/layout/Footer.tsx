@@ -1,22 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FOOTER_TEXT } from '../../utils/constants';
-import { fadeInUp } from '../../utils/animations';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 const Footer: React.FC = () => {
-  const { ref, isInView } = useScrollAnimation();
-
   return (
-    <motion.div
-      ref={ref}
+    <motion.footer
       className="footer-small"
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={fadeInUp}
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
     >
-      <i className="fas fa-code"></i> {FOOTER_TEXT}
-    </motion.div>
+      <i className="fas fa-code" /> {FOOTER_TEXT}
+    </motion.footer>
   );
 };
 

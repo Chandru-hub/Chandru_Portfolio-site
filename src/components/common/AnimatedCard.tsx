@@ -1,7 +1,6 @@
 import React, { ReactNode } from 'react';
 import { motion } from 'framer-motion';
-import { fadeInUp } from '../../utils/animations';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { softSpring } from '../../utils/animations';
 
 interface AnimatedCardProps {
   children: ReactNode;
@@ -9,25 +8,32 @@ interface AnimatedCardProps {
   delay?: number;
 }
 
+/** Card with scroll reveal — uses whileInView (avoids RefObject TS2322 on Netlify). */
 const AnimatedCard: React.FC<AnimatedCardProps> = ({
   children,
   className = '',
   delay = 0,
-  ...props
 }) => {
-  const { ref, isInView } = useScrollAnimation();
-
   return (
     <motion.div
-      ref={ref}
       className={`card ${className}`}
-      initial="hidden"
-      animate={isInView ? "visible" : "hidden"}
-      variants={fadeInUp}
-      transition={{ delay }}
-      whileHover={{ y: -8, boxShadow: "0 12px 40px rgba(0,0,0,0.12)" }}
-      {...props}
+      initial={{ opacity: 0, y: 36 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12 }}
+      transition={{ delay, duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+      whileHover={{
+        y: -8,
+        boxShadow: '0 18px 48px rgba(0,0,0,0.14)',
+        transition: softSpring,
+      }}
     >
+      <motion.div
+        className="card-shine"
+        initial={{ x: '-120%', opacity: 0 }}
+        whileHover={{ x: '120%', opacity: 0.35 }}
+        transition={{ duration: 0.7, ease: 'easeInOut' }}
+        aria-hidden="true"
+      />
       {children}
     </motion.div>
   );
