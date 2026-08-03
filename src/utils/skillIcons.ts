@@ -44,7 +44,6 @@ export const SKILL_ICON_MAP: Record<string, string> = {
   'Swagger/OpenAPI': DEVICON('swagger/swagger-original.svg'),
   'Visual Studio': DEVICON('visualstudio/visualstudio-plain.svg'),
   'VS Code': DEVICON('vscode/vscode-original.svg'),
-  'Windows Forms': DEVICON('windows8/windows8-original.svg'),
   WordPress: DEVICON('wordpress/wordpress-original.svg'),
   'Docker (basic)': DEVICON('docker/docker-original.svg'),
 };
