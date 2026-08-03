@@ -35,7 +35,7 @@ const skillsData: SkillGroup[] = [
   },
   {
     category: 'Other',
-    items: ['Windows Forms', 'WordPress', 'Docker (basic)'],
+    items: ['WordPress', 'Docker (basic)'],
   },
 ];
 
