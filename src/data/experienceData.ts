@@ -17,7 +17,7 @@ const experienceData: Experience[] = [
   },
   {
     id: 2,
-    title: 'Web Programmer Developer',
+    title: 'Web Programmer',
     company: 'Dotcom Infotech',
     period: 'Feb 2020 – Jun 2022',
     description: 'Buyautoparts E-Commerce · ASP.NET Core MVC · JavaScript · SQL Server',
